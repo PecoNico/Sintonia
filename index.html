@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sintonía - Explora el Universo Musical</title>
+    <link rel="stylesheet" href="https://use.typekit.net/sxr0pzp.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 180px;
+        }
+
+
+        body {
+            font-family: 'Usual', sans-serif;
+            margin: 0;
+            background: linear-gradient(200deg, #000000, #4b0082, #000000);
+            color: white;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .nav {
+            background-color: #4c00824b;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #6a0dad;
+        }
+
+        .encabezado {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .encabezado h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .encabezado p {
+            font-size: 23px;
+            margin: 20px 0;
+        }
+
+        .encabezado .botones-descarga a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: white;
+            background: #390061;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .encabezado .botones-descarga a:hover {
+            background: #6a0dad;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            height: auto;
+        }
+
+        .contenedor-flex {
+            padding-top: 5%;
+            padding-bottom: 8%;
+            display: flex;
+            align-items: center;
+            text-align: right;
+            margin-right: 180px;
+            flex-direction: row-reverse;
+        }
+
+
+        .multimedia h2 {
+            font-size: 80px;
+            margin: 0;
+            flex: 1;
+        }
+
+        .video-placeholder {
+            flex: 1;
+            display: flex;
+            margin-left: 100px;
+            justify-content: center;
+        }
+
+        .video-placeholder img {
+            width: 700px;
+            height: auto;
+        }
+
+        .beneficios {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .beneficios h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .beneficios .contenedor-beneficios {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 5%;
+        }
+
+        .beneficios .contenedor-beneficios div {
+            background: rgba(75, 0, 130, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .tabla-planes {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            font-size: 17px;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: 2px solid #6a0dad;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .tabla-planes thead {
+            background: rgba(75, 0, 130, 1);
+            color: white;
+            font-weight: bold;
+        }
+
+        .tabla-planes td {
+            padding: 12px 20px;
+            border: 1px solid #6a0dad;
+        }
+
+        .tabla-planes tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .tabla-planes tr:hover {
+            background: rgba(106, 13, 173, 0.8);
+            transition: background 0.3s;
+        }
+
+
+        .testimonios {
+            text-align: center;
+            padding: 50px 20px;
+            padding-top: 9%;
+            padding-bottom: 7%;
+        }
+
+        .testimonios h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .testimonio {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            color: #bbb;
+        }
+
+        .equipo {
+            text-align: center;
+            padding: 50px 20px;
+            padding-bottom: 7%;
+        }
+
+        .equipo h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .equipo p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ffffff;
+        }
+
+        .preguntas-frecuentes {
+            padding: 50px 20px;
+        }
+
+        .preguntas-frecuentes h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .preguntas-frecuentes p {
+            margin-bottom: 20px;
+        }
+
+        .preguntas-frecuentes strong {
+            color: #6a0dad;
+        }
+
+        .pie {
+            background: rgba(0, 0, 0, 0.8);
+            color: #bbb;
+            font-size: 12px;
+            padding: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contacto {
+            font-size: 14px;
+        }
+
+        .contacto a {
+            color: #6a0dad;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contacto a:hover {
+            color: #fff;
+        }
+
+        .contacto span {
+            margin-right: 15px;
+        }
+
+        .redes-sociales {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .redes-sociales a {
+            color: #6a0dad;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .redes-sociales a:hover {
+            color: #fff;
+        }
+
+        .pie p {
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="#sobre-nosotros">Sobre Nosotros</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#planes">Suscripciones</a>
+        <a href="#logotipo">Descargar</a>
+    </nav>
+
+    <header class="encabezado">
+        <img src="IMG/LOGO.png" alt="Logo" class="logo" id="logotipo">
+        <h1>El universo entero ahora en tus manos</h1>
+        <p>Escuchar música nunca fue tan cómodo</p>
+        <div class="botones-descarga">
+            <a href="#logotipo">Descargar en App Store</a>
+            <a href="#logotipo">Descargar en Play Store</a>
+        </div>
+    </header>
+
+    <section class="multimedia" id="descargar">
+        <div class="contenedor-flex">
+            <h2>Un viaje infinito <br> a través del sonido</h2>
+            <div class="video-placeholder">
+                <img src="IMG/MOCKUP3.png" alt="MOCKUP3">
+            </div>
+        </div>
+    </section>
+
+    <section class="equipo" id="sobre-nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Esta app fue creada por un grupo de 4 diseñadores independientes en busca de cubrir una necesidad que tenían
+            en común: <strong>expandir sus gustos musicales</strong>.</p>
+    </section>
+
+    <section class="beneficios" id="beneficios">
+        <h2>Beneficios de usar Sintonía</h2>
+        <div class="contenedor-beneficios">
+            <div>Descubre nueva música</div>
+            <div>Conecta con amigos</div>
+            <div>Cumple retos musicales</div>
+            <div>Apoya a tus artistas favoritos</div>
+        </div>
+    </section>
+
+    <section id="planes" class="beneficios">
+        <h2>Planes de Sintonía</h2>
+        <table class="tabla-planes">
+            <thead>
+                <tr>
+                    <th>Planes</th>
+                    <th>Duración</th>
+                    <th>Características</th>
+                    <th>Precios</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gratis</td>
+                    <td>Siempre</td>
+                    <td>Acceso a toda la música con anuncios.</td>
+                    <td>$0</td>
+                </tr>
+                <tr>
+                    <td>Individual</td>
+                    <td>Mensual</td>
+                    <td>Acceso completo a música, sin anuncios, calidad HD.</td>
+                    <td>$450/mes</td>
+                </tr>
+                <tr>
+                    <td>Individual Premium</td>
+                    <td>Anual</td>
+                    <td>Acceso completo a música, sin anuncios, calidad HD, descargas.</td>
+                    <td>$4.800/año (aprox. $400/mes)</td>
+                </tr>
+                <tr>
+                    <td>Estudiantil</td>
+                    <td>Mensual</td>
+                    <td>Acceso completo a música, sin anuncios, calidad HD, descargas.</td>
+                    <td>$250/mes</td>
+                </tr>
+                <tr>
+                    <td>Familiar</td>
+                    <td>Mensual</td>
+                    <td>Acceso para hasta 6 cuentas completo a música, sin anuncios, calidad HD.</td>
+                    <td>$750/mes</td>
+                </tr>
+                <tr>
+                    <td>Familiar Premium</td>
+                    <td>Anual</td>
+                    <td>Acceso para hasta 6 cuentas completo a música, sin anuncios, calidad HD, descargas.</td>
+                    <td>$8.400/año (aprox. $700/mes)</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <section class="testimonios" id="opiniones">
+        <h2>Lo que dicen nuestros usuarios</h2>
+        <div class="testimonio">
+            Claudia: ¡Agradecida con la app! La instalamos en familia y nos unimos como nunca. Compartimos nuestros
+            retos y las playlists del viaje ya no son pelea.
+        </div>
+        <div class="testimonio">
+            Julia: ¡Amé los desafíos! Siempre me costó muchísimo salir de mi zona de confort, pero poco a poco esta app
+            me ayuda a descubrir nueva música.
+        </div>
+        <div class="testimonio">
+            Benjamín: Súper intuitiva. Me instalé la app y me suscribí en la misma semana. Fácil de usar, buena calidad
+            de música, gran personalización. Lo tiene todo.
+        </div>
+        <div class="testimonio">
+            Rocío: Salvó mi secundaria. Me descargué Sintonía para escuchar en los recreos. Gracias a la app conseguí
+            una nueva amiga con gustos parecidos.
+        </div>
+    </section>
+
+    <section class="preguntas-frecuentes" id="preguntas-frecuentes">
+        <h2>Preguntas Frecuentes</h2>
+        <p><strong>¿Sintonía ofrece un periodo de prueba gratuito?</strong><br>Sí, todos los nuevos usuarios obtienen
+            los primeros tres meses de acceso gratuito al plan básico.</p>
+        <p><strong>¿Cómo puedo activar el plan Estudiantil?</strong><br>Debes verificar tu condición de estudiante a
+            través de nuestro sistema de validación.</p>
+        <p><strong>¿Puedo personalizar mis playlists?</strong><br>¡Por supuesto! Puedes crear playlists y compartirlas
+            con tus amigos o guardarlas como favoritos.</p>
+    </section>
+
+    <footer class="pie">
+        <div class="footer-content">
+            <div class="contacto">
+                <p><strong>Contacto:</strong>
+                    <span>Email: <a href="sintonia@gmail.com">sintonia@gmail.com</a></span> |
+                    <span>Teléfono: +54 9 1130157441</span> |
+                    <span>Dirección: Av. Corrientes 2037, Buenos Aires, Argentina</span>
+                </p>
+            </div>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
+                <a href="https://www.instagram.com/n1co.peco/" target="_blank">Instagram</a> |
+                <a href="https://x.com/home" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <p>&copy; 2024 Sintonía - Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
